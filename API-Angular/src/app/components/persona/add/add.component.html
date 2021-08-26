@@ -1,0 +1,31 @@
+<div class="mb-3">
+    <form [formGroup]="agregarPersona" (ngSubmit)="addPersona()">
+        <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+    <span *ngIf="agregarPersona.get('nombre')?.invalid && agregarPersona.get('nombre')?.touched" class="text-danger">
+        El <strong>nombre</strong> es requerido!
+    </span>
+</div>
+    <br/>
+    <div class="mb-3">
+    <label for="apellido" class="form-label">Apellido</label>
+    <input formControlName="apellido" type="text"  class="form-control" id="apellido" placeholder="Apellido">
+    <span *ngIf="agregarPersona.get('apellido')?.invalid && agregarPersona.get('apellido')?.touched" class="text-danger">
+        El <strong>apellido</strong> es requerido!
+    </span>
+</div>
+    <br/>
+    <div class="mb-3">
+    <label for="dni" class="form-label">DNI</label>
+    <input  formControlName="dni"type="text" class="form-control" id="dni" placeholder="DNI">
+    <span *ngIf="agregarPersona.get('dni')?.invalid && agregarPersona.get('dni')?.touched" class="text-danger">
+        El <strong>dni</strong> es requerido!
+    </span>
+</div>
+    <button type="submit" [disabled]="agregarPersona?.invalid"  class="btn btn-info mt-5">Guardar</button>
+    <button type="button" class="btn btn-warning mt-5"  routerLink="/">Volver</button>
+</form>
+    
+    
+  </div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <button class="btn btn-primary" routerLink="/add">Agregar</button>
+        <table class="table text-center">
+          
+            <thead>
+              <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">DNI</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let persona of listPersonas">
+                <th scope="row" >{{persona.id}}</th>
+                <td>{{persona.nombre}}</td>
+                <td>{{persona.apellido}}</td>
+                <td>{{persona.dni}}</td>
+                <td><button class="btn btn-warning">Editar</button></td>
+                <td><button class="btn btn-danger" (click)="deletePersona(persona.id)">Eliminar</button></td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
